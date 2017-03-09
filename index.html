@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Timer</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/timer.css">
+</head>
+<body>
+  <div class="clock">
+    <div class="secHand"></div>
+    <div class="hourHand"></div>
+  </div>
+    <div class="parent">
+        <p id="timer"></p>
+    </div>
+    <form id="setTimer">
+<div class="inputFields">
+        <input  class= "common" id="hour" placeholder='00' type="number" autocomplete=off ></input>
+        <input class= "common" id="min" placeholder='00' type="number" autocomplete=off ></input>
+        <input class= "common" id="sec" placeholder='00'type="number" autocomplete=off ></input>
+      </div>
+<div>
+        <button id="start">Start</button>
+        <button id="restart">Reset</button>
+      </div>
+    </form>
+    <script src="js/timer.js"></script>
+</body>
+</html>
