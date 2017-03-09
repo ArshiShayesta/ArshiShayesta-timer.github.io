@@ -1,0 +1,201 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    color: #08FAD5;
+    outline: none !important;
+}
+body {
+    background-color: #19211f;
+}
+#setTimer, .parent, .clock {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.inputFields {
+    display: flex;
+    margin-top: 43px;
+}
+#timer {
+    width: 600px;
+}
+#timer, .inputFields>input {
+    height: 200px;
+    line-height: 200px;
+    font-size: 100px;
+}
+.inputFields>input {
+    width: 200px;
+    background-color: transparent;
+}
+input#hour {
+    text-align: right;
+    margin-right: -30px;
+    z-index: 2;
+}
+input#min {
+    margin-right: -10px;
+}
+input#sec {
+    margin-left: -10px;
+    text-align: left;
+}
+.inputFields::before {
+    margin-left: 36%;
+}
+.inputFields::after {
+    margin-left: 58%;
+}
+.inputFields::before, .inputFields::after {
+    content: ":";
+    display: inline;
+    position: absolute;
+    z-index: 10000;
+    width: 20px;
+    height: 205px;
+    text-align: center;
+    line-height: 205px;
+    font-size: 100px;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #0f584d;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #0f584d;
+    opacity: 1;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #0f584d;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #0f584d;
+}
+input {
+    border-color: transparent;
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 5px rgba(27, 232, 201, 0.75);
+}
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+button {
+    padding: 5px 15px;
+    font-size: 23px;
+    background-color: transparent;
+    border: 2px solid #08FAD5;
+    border-radius: 6px;
+    margin: 0 10px;
+}
+.clock {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #08FAD5;
+    border-radius: 100%;
+    top: 30%;
+}
+.clockBuzz {
+    -webkit-animation: shakeclock 0.2s linear;
+    animation: shakeclock 0.2s linear;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    -webkit-animation-iteration-count: 45;
+    /* Safari 4.0 - 8.0 */
+    animation-iteration-count: 45;
+}
+.clock:before, .clock::after {
+    content: "";
+    display: inline;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: #08FAD5;
+}
+@keyframes shakeclock {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+@-webkit-keyframes shakeclock {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+.clock:before {
+    margin-left: -40px;
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+.clock:after {
+    -ms-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    margin-left: 20px;
+}
+.secHand {
+    height: 30px;
+    margin-top: 23px;
+    margin-left: 50px;
+}
+.secHand, .hourHand {
+    width: 3px;
+    background-color: #08FAD5;
+    position: absolute;
+}
+.hourHand {
+    height: 20px;
+    height: 30px;
+    margin-left: 36px;
+    margin-top: 38px;
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.rotateHand {
+    transform-origin: 50% 100%;
+    -webkit-animation: movesecond 20s infinite;
+    animation: movesecond 20s infinite;
+}
+@keyframes movesecond {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes movesecond {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
